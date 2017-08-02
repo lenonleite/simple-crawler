@@ -36,10 +36,38 @@ class General {
 	 * @param string $html
 	 * @return mixed
 	 */
-	public function get_html_between_tag( $tag = 'body', $html = '' ) {
+	public function get_html_between_tag( $html = '', $tag = 'body' ) {
 
 		$html = $this->check_html( $html );
 		preg_match_all( "/(?s)<" . $tag . "[^>]*>(.*?)<\/" . $tag . ">/", $html, $matches );
+
+		return $matches[0];
+	}
+
+	/**
+	 * @param string $html
+	 * @param string $tag
+	 * @param string $id
+	 * @return mixed
+	 */
+	public function get_html_between_tag_attr_id_or_class( $html = '', $tag = 'body', $attribute = '' ) {
+
+		$html = $this->check_html( $html );
+		preg_match_all( "/(?s)<" . $tag . "[^>]*(class|id)=\"[^>]*" . $attribute . "[^>]*\"[^>]*>(.*?)<\/" . $tag . ">/", $html, $matches );
+
+		return $matches[0];
+	}
+
+	/**
+	 * @param string $html
+	 * @param string $tag
+	 * @param string $id
+	 * @return mixed
+	 */
+	public function get_html_between_tag_attr_and_value( $html = '', $tag = 'body', $attribute = '', $value = '' ) {
+
+		$html = $this->check_html( $html );
+		preg_match_all( "/(?s)<" . $tag . "[^>]*" . $attribute . "=(\"|')[^>]*" . $value . "[^>]*(\"|' )[^>]*>(.*?)<\/" . $tag . ">/", $html, $matches );
 
 		return $matches[0];
 	}
