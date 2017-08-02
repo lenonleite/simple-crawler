@@ -1,3 +1,8 @@
-# idea phpstorm
-.idea/*
+# jetbrains
 .idea/
+.idea_modules/
+*.ipr
+*.iws
+*.iml
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
