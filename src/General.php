@@ -53,9 +53,8 @@ class General {
 	 */
 	public function get_html_between_tag_attr_id_or_class( $html = '', $tag = 'body', $attribute = '' ) {
 
-
 		$html = $this->check_html( $html );
-		
+
 		preg_match_all( "/(?s)<" . $tag . "[^>]*(class|id)=\"[^>]*" . $attribute . "[^>]*\"[^>]*>(.*?)<\/" . $tag . ">/", $html, $matches );
 
 		return $matches[0];
