@@ -226,3 +226,7 @@ array(4) {
 }
 
 ```
+
+## Future Features
+
+> Find html tags on;y with by id and class names.
