@@ -39,7 +39,6 @@ class General {
 	public function get_html_between_tag( $html = '', $tag = 'body' ) {
 
 		$html = $this->check_html( $html );
-
 		preg_match_all( "/(?s)<" . $tag . "[^>]*>(.*?)<\/" . $tag . ">/", $html, $matches );
 
 		return $matches[0];
@@ -51,11 +50,10 @@ class General {
 	 * @param string $id
 	 * @return mixed
 	 */
-	public function get_html_between_tag_attr_id_or_class( $html = '', $tag = 'body', $attribute = '' ) {
+	public function get_html_between_tag_attr_id_or_class( $html = '', $tag = 'body', $value = '' ) {
 
 		$html = $this->check_html( $html );
-
-		preg_match_all( "/(?s)<" . $tag . "[^>]*(class|id)=\"[^>]*" . $attribute . "[^>]*\"[^>]*>(.*?)<\/" . $tag . ">/", $html, $matches );
+		preg_match_all( "/(?s)<" . $tag . "[^>]*(class|id)=\"[^>]*" . $value . "[^>]*\"[^>]*>(.*?)<\/" . $tag . ">/", $html, $matches );
 
 		return $matches[0];
 	}
@@ -85,7 +83,7 @@ class General {
 		$tags                     = $this->get_tags( $tag, $html );
 		$result['tags']           = $tags;
 		$result['html']           = $html;
-		$result['tags_atributes'] = $this->get_atributes_array_tags( $tags );
+		$result['tags_atributes'] = $this->get_attributes_array_tags( $tags );
 
 		return $result;
 	}
@@ -103,26 +101,44 @@ class General {
 	}
 
 	/**
-	 * @param $tag
+	 * @param $tags
 	 * @return array
 	 */
-	public function get_atributes_array_tags( $tags ) {
+	public function get_attributes_array_tags( $tags ) {
 
 		$tag_atributes = [];
+
 		foreach ( $tags as $key => $tag ) {
-			$tag_atributes[] = $this->get_atribute_tag( $tag );
+
+			$tag_atributes[] = $this->get_attribute_tag( $tag );
+
 		}
 
 		return $tag_atributes;
+
 	}
 
 	/**
 	 * @param $tag
 	 * @return mixed
 	 */
-	public function get_atribute_tag( $tag ) {
+	public function get_attribute_tag( $tag ) {
 
-		preg_match_all( "/\s(.*?)=[\"'](.*?)[\"']/", $tag, $matches );
+		preg_match_all( "/<(.*?) ((.*?)=[\"'](.*?)[\"'](.*?))>/", $tag, $matches );
+		$matches_filter['full']  = $matches[0][0];
+		$matches_filter['key']   = $matches[1][0];
+		$matches_filter['value'] = $matches[2][0];
+
+		return $matches_filter;
+	}
+
+	/**
+	 * @param $html
+	 * @return mixed
+	 */
+	public function get_all_tags_atributes_in_html( $html ) {
+
+		preg_match_all( "/\s<(.*?) ((.*?)=[\"'](.*?)[\"'])>/", $html, $matches );
 		$matches_filter['full']  = $matches[0];
 		$matches_filter['key']   = $matches[1];
 		$matches_filter['value'] = $matches[2];
