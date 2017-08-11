@@ -5,6 +5,10 @@
 ## Beta Version
 > 0.3
 
+## Install
+
+* composer require lenonleite/simple-crawler
+
 ## Usage
 
 > #### Get Tags In Html
