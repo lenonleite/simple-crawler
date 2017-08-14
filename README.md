@@ -9,6 +9,11 @@
 
 * composer require lenonleite/simple-crawler
 
+## Code Style
+
+> This project not follow the [PSR code style](http://www.php-fig.org/psr/psr-2/). We follow [WP Code Standard](https://codex.wordpress.org/WordPress_Coding_Standards).
+
+
 ## Usage
 
 > #### Get Tags In Html
