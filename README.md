@@ -5,6 +5,11 @@
 ## Beta Version
 > 0.4
 
+## New Features
+> PHP / Methods
+> Html
+> Form
+
 ## Usage
 
 > #### Get Tags In Html
