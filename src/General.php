@@ -82,7 +82,6 @@ class General {
 		$html                     = $this->check_html( $html );
 		$tags                     = $this->get_tags( $tag, $html );
 		$result['tags']           = $tags;
-		$result['html']           = $html;
 		$result['tags_atributes'] = $this->get_attributes_array_tags( $tags );
 
 		return $result;
@@ -121,6 +120,7 @@ class General {
 	/**
 	 * @param $tag
 	 * @return mixed
+	 *     * To do Readme
 	 */
 	public function get_attribute_tag( $tag ) {
 
@@ -135,6 +135,7 @@ class General {
 	/**
 	 * @param $html
 	 * @return mixed
+	 * To do Readme
 	 */
 	public function get_all_tags_atributes_in_html( $html ) {
 

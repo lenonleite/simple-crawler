@@ -29,8 +29,8 @@ class Login extends General {
 	public function get_forms( $html = '' ) {
 
 		$this->set_new_html( $html );
-		$html_between_forms = $this->get_html_between_tag( 'form' );
-
+		$html_between_forms = $this->get_html_between_tag( '', 'form' );
+//		var_dump( $html_between_forms );
 		$forms = [];
 		foreach ( $html_between_forms as $key_form => $html_form ) {
 			$forms[ $key_form ]['html']   = $html_form;
