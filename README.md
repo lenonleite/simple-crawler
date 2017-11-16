@@ -6,9 +6,9 @@
 > 0.4
 
 ## New Features
-> PHP / Methods
-> Html
-> Form
+* PHP / Methods
+* Html
+* Form
 
 ## Usage
 
