@@ -25,9 +25,13 @@
   "require": {
     "php": ">=7.0.0"
   },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1"
+  },
   "autoload": {
     "psr-4": {
-      "Lenonleite\\SimpleCrawler\\": "src/"
+      "Lenonleite\\SimpleCrawler\\": "src/",
+      "Lenonleite\\Test\\SimpleCrawler\\": "test/"
     }
   },
   "minimum-stability": "dev"

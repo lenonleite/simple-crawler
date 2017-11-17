@@ -17,7 +17,7 @@
 use Lenonleite\SimpleCrawler;
 $html = file_get_contents( 'teste.html' );
 $general = new SimpleCrawler\General();
-$result = $general->get_tags( $html );
+$result = $general->get_tags('div', $html );
 ```
 *Result*
 ```php
