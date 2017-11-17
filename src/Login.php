@@ -23,7 +23,7 @@ class Login extends General {
 	}
 
 	/**
-	 * @param string $htm
+	 * @param string $html
 	 * @return mixed
 	 */
 	public function get_forms( $html = '' ) {
