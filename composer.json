@@ -1,0 +1,34 @@
+{
+  "name": "lenonleite/simple-crawler",
+  "type": "library",
+  "description": "LenonLeite Component - Simple Crawler, for read pages ",
+  "keywords": [
+    "hacking",
+    "wordpress",
+    "pentest",
+    "hacker",
+    "php",
+    "library",
+    "read",
+    "crawler",
+    "body"
+  ],
+  "homepage": "http://www.lenonleite.com.br",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lenon Leite",
+      "email": "lenonleite@gmail.com.br",
+      "homepage": "http://www.lenonleite.com.br"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lenonleite\\SimpleCrawler\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
