@@ -23,7 +23,23 @@ class Login extends General {
 	}
 
 	/**
-	 * @param string $htm
+	 * @param array $new_data
+	 * @return array
+	 */
+	private function set_form( $new_data = [] ) {
+
+		$default_data = [
+			'method'   => 'post',
+			'action'   => '/',
+			'fields'   => [],
+			'atribute' => []
+		];
+
+		return array_merge( $default_data, $new_data );
+	}
+
+	/**
+	 * @param string $html
 	 * @return mixed
 	 */
 	public function get_forms( $html = '' ) {
@@ -46,21 +62,5 @@ class Login extends General {
 	 */
 	public function mount_form( $data = [] ) {
 
-	}
-
-	/**
-	 * @param array $new_data
-	 * @return array
-	 */
-	private function set_form( $new_data = [] ) {
-
-		$default_data = [
-			'method'   => 'post',
-			'action'   => '/',
-			'fields'   => [],
-			'atribute' => []
-		];
-
-		return array_merge( $default_data, $new_data );
 	}
 }
